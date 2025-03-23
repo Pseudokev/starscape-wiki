@@ -56,7 +56,10 @@ export default defineConfig({
   plugins: [svelte()],
   build:{
     rollupOptions:{
-      input:input
+      input:input,
+      output:{
+        dir:"docs"
+      }
     }
   }
 })
