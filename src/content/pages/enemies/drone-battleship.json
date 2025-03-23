@@ -1,0 +1,32 @@
+{
+    "title" : "Drone Battleship",
+    "thumbnail": "",
+    "search": {
+        "keywords": ["Drone", "Battleship"],
+        "searchable" : true
+    },
+    "embed":{
+        "summary": "The Drone Battleship is an enormous drone ship that has a 10% (?) chance to appear after defeating a Drone Armada. It is currently the largest and most powerful enemy in the game, having unmatched durability and firepower."
+    },
+    "overview":{
+        "image":"",
+        "title": "Drone Battleship",
+        "sections": [
+            {
+                "name":"Information",
+                "info": {
+                    "Type": "Battleship"
+                }
+            }
+        ]
+    },
+    "contents":[
+        {
+            "type":"paragraph",
+            "content":[
+                "something something",
+                {"text":"Drone Armada", "page-link":"drone-fleets"}
+            ]
+        }
+    ]
+}
