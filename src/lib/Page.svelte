@@ -1,7 +1,7 @@
 <script>
 
     import Divider from "./Divider.svelte";
-    import svlogo from "../assets/placeholder.png";
+
     import Article from "./Article.svelte";
 
     let props = $props();

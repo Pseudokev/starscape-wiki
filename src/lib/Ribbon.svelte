@@ -1,10 +1,7 @@
 
-<script>
-    import starscapeLogo from "../assets/Logo.png"
-</script>
 
 <div class="ribbon">
-    <img src={starscapeLogo} class ="logo" alt = "logo"/>
+    <img src='/assets/Logo.png' class ="logo" alt = "logo"/>
 
 </div>
 

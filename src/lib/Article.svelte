@@ -1,7 +1,6 @@
 
 <script>
     import Divider from "./Divider.svelte";
-    import svlogo from "../assets/placeholder.png";
     import YAML from "yaml"
 
     let props=$props();
@@ -21,7 +20,7 @@
         <div class="overview_box">
             <div class = "overview">
                 <h2 style="text-align:center; font-size:medium"><strong>{content.overview.title}</strong> </h2>
-                <img src={"/src/"+content.overview.image} alt="alt text" class="overview-img">
+                <img src={""+content.overview.image} alt="alt text" class="overview-img">
                 <br>
                 {#each content.overview.sections as section}
                     <p class="overview-text" style="text-align:center; margin-top:10px; margin-bottom:0px;"><strong>{section.name}</strong></p>
@@ -42,10 +41,12 @@
             </div>
         </div>
     {/if}
+    {#if content.contents}
+        {#each content.contents as section}
+            {@html section.content}
+        {/each}
+    {/if}
     
-    {#each content.contents as section}
-        {@html section.content}
-    {/each}
     
 
     <style>
