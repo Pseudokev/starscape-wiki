@@ -1,0 +1,50 @@
+title: Drone Battleship
+thumbnail: assets/placeholder.png
+overview:
+  image: assets/placeholder.png
+  title: Drone Battleship
+  sections:
+    - name: Information
+      info:
+        Type: Battleship
+        Manufacturer: Drones
+        Length: 875m
+        Armament: 10L 34M 28S
+        Obtainable: "No" 
+    - name: Stats
+      info:
+        Top Speed: unknown
+        Accelleration: unknown
+        Shield Hitpoints: N/A
+        Shield Regeneration: N/A
+
+contents:
+  - 
+    header: Summary
+    content: >
+      <p class="paragraph">The Drone Battleship is an enormous drone ship that has a 10% (?) chance to appear after defeating a 
+      <a href="/npcs/drones"> Drone Armada.</a> It is currently the largest and most powerful enemy in the game, having unmatched 
+      durability and firepower. The Battleship is also unique in that it is defeated much like Drone Factories, where the ship itself 
+      cannot be destroyed and instead individual components of the ship must be destroyed in order to blow up it's internal reactor, 
+      at which point the entire ship explodes. It is currently the only boss fight in the game, however it is entirely optional and 
+      it doesn't drop any unique items when defeated. It always spawns with a formidable escort force of elite frigates and destroyers.</p>
+  - 
+    header: components
+    content: >
+      <p>
+        The Drone Battleship consists of 8 different component types.
+      </p>
+      <ul>
+          <li><strong>Central Battlements</strong><br>The Central Battlements are the most heavily armed on the ship, each having two large, four medium, and four small turrets. When destroyed, the central battlements break away and reveal the main reactor inside.</li>
+          <li><strong>Frontal Battlements</strong><br>The Frontal Battlements are nearly as strong as the central battlements, housing two large, three medium, and four small turrets. When destroyed, the frontal battlements break away and reveal one of the reactor shield generators. </li>
+          <li><strong>Engine Battlements</strong><br>The Engine Battlements do not have a formidable armament like the central and frontal. They each have four medium and three small turrets. When destroyed, the Battleship has its max speed reduced.</li>
+          <li>Two External Shield Generators</li>
+          <li>Two Reactor Shield Generators</li>
+          <li>Communications Array</li>
+          <li>Main Reactor</li>
+          <li><strong>Superstructure</strong><br>The superstructure is the main hull of the ship, and is connected to all other components. It is impervious to all damage, even if damage indicators may appear on it when shot.</li>
+      </ul>
+      <p class="paragraph">
+          All components can be destroyed except for the superstructure, which is the main part of the ship all the others are attached to. The superstructure is completely impervious to all damage, even though damage indicators may appear on it when shot. 
+          The Battleship is defeated by destroying the main reactor at its center, hidden behind the central battlements.
+      </p>

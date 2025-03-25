@@ -1,0 +1,48 @@
+name: Korrelite
+sell-value: 7.0
+volume: 0.01
+tier: common
+
+recipes:
+  - in: 
+    - item: korrelite-ore
+      quantity: 1
+    out:
+    - item: korrelite
+      quantity: 2
+    time: 2 #seconds
+    recipe-type: refinery
+  - in: 
+    - item: superior-korrelite
+      quantity: 1
+    out:
+    - item: korrelite
+      quantity: 3
+    time: 2 #seconds
+    recipe-type: refinery
+  - in: 
+    - item: pristine-korrelite
+      quantity: 1
+    out:
+    - item: korrelite
+      quantity: 4
+    time: 2 #seconds
+    recipe-type: refinery
+  - in: 
+    - item: inferior-korrelite
+      quantity: 1
+    out:
+    - item: korrelite
+      quantity: 1
+    time: 2 #seconds
+    recipe-type: refinery
+  - in: 
+    - item: metal-scraps
+      quantity: 1
+    out:
+    - item: korrelite
+      quantity: 1
+      chance: 0.16
+    time: 2 #seconds
+    recipe-type: scrapper
+

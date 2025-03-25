@@ -1,0 +1,69 @@
+name: Yukon
+class: Mining Barge
+modelers: 
+  - Pseudokev
+
+sell-value: 40000
+volume: 750
+tier: common
+
+stats:
+  shield-hitpoints: 1800
+  shield-deflection: 2
+  shield-regen: 12
+  hull-hitpoints: 8400
+  hull-regen: 0
+  hull-armor: 4
+
+  energy: 900
+  enegry-regen: 9
+
+  speed: 100
+  accelleration: 20
+  agility: 22
+
+  warp-speed: 0.7
+  warp-charge-time: 6
+  signal-range: 10000
+  sensor-strength: 55
+
+  cargo-slots: 2
+
+  turrets:
+    pdt: 4
+    small: 10
+    limits:
+      combat: 4
+      mining: 6
+  mods:
+    weapon: 0
+    defense: 2
+    engine: 1
+    reactor: 1
+    subsystems: 1
+  bonuses:
+    mining-yeild: 2.25
+    damage: 0.8
+
+recipes:
+  - in:
+    - item: korrelite
+      quantity: 19000
+    - item: reknite
+      quantity: 11300
+    - item: gellium
+      quantity: 7600
+    - item: axnit
+      quantity: 2600
+    - item: narcor
+      quantity: 800
+    - item: red-narcor
+      quantity: 300
+    - item: vexnium
+      quantity: 25
+    out:
+      - ship: yukon
+        quantity: 1
+    time: 21600 #seconds
+    recipe-type: shipyard
+    
