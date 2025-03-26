@@ -4,7 +4,7 @@
 </script>
 
 <div class="ribbon">
-    <img src='/assets/Logo.png' class ="logo" alt = "logo"/>
+    <img src={logo} class ="logo" alt = "logo"/>
 
 </div>
 
