@@ -8,14 +8,18 @@
     let props=$props();
     
     let content = $derived.by(()=>{
+        
+        let fixed = props.content.replaceAll(new RegExp("href\\s*=\\s*\\\"","g"), "href=\""+base);
+            
+        
         if (props.assets != undefined){
             for (let i=0; i<props.assets.length; i++) {
-                return YAML.parse(props.content.replaceAll(new RegExp("src\\s*=\\s*\\\""+props.assets[i].name.replace(".","\\.")+"\\\"","g"), "src=\""+props.assets[i].url+"\""));
+                return YAML.parse(fixed.replaceAll(new RegExp("src\\s*=\\s*\\\""+props.assets[i].name.replace(".","\\.")+"\\\"","g"), "src=\""+props.assets[i].url+"\""));
                 
             }
         }
         
-        return YAML.parse(props.content);
+        return YAML.parse(fixed);
     });
     
     
