@@ -1,6 +1,6 @@
 
 <script>
-    import logo from "../../static/assets/Logo.png"
+    import logo from "$lib/assets/Logo.png"
 </script>
 
 <div class="ribbon">

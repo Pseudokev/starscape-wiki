@@ -9,14 +9,13 @@
     let searchfocused = $state(false);
     let searchvalue = $state("")
     function onfocus(){
-        console.log("focused")
         searchfocused = true;
     }
     function onunfocus(){
         setTimeout(function(){searchfocused = false;},100)
         
     }
-    console.log(props.pages)
+    
 </script>
 
 

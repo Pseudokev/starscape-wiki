@@ -1,18 +1,20 @@
 
 <script>
-    import Divider from "./Divider.svelte";
+    import { base } from "$app/paths";
+    import Divider from "$lib/Divider.svelte";
     import YAML from "yaml"
+    const images = import.meta.glob(['$lib/assets/**.jpg', '$lib/assets/**.png', '$lib/assets/**.svg'], { eager: true, query: '?url', import:'default' });
 
     let props=$props();
     
-
     let content = $derived.by(()=>{
-        if (props.assets!=null){
+        if (props.assets != undefined){
             for (let i=0; i<props.assets.length; i++) {
                 return YAML.parse(props.content.replaceAll(new RegExp("src\\s*=\\s*\\\""+props.assets[i].name.replace(".","\\.")+"\\\"","g"), "src=\""+props.assets[i].url+"\""));
                 
             }
         }
+        
         return YAML.parse(props.content);
     });
     
@@ -28,7 +30,8 @@
         <div class="overview_box">
             <div class = "overview">
                 <h2 style="text-align:center; font-size:medium"><strong>{content.overview.title}</strong> </h2>
-                <img src={""+content.overview.image} alt="alt text" class="overview-img">
+                    <img src={props.assets == undefined ? images["/src/lib/"+content.overview.image] : content.overview.image} alt="alt text" class="overview-img">
+
                 <br>
                 {#each content.overview.sections as section}
                     <p class="overview-text" style="text-align:center; margin-top:10px; margin-bottom:0px;"><strong>{section.name}</strong></p>

@@ -28,14 +28,21 @@ function makeSearch(filepath){
 
 
 export function load({params}){
+    //console.log(params.page+"-----------------------")
+    try{
+        let content = fs.readFileSync("src/content/pages/"+params.page+".yml","utf-8");
+        const allFiles = getAllFiles('src/content/pages');
+        const pages = allFiles.map(makeSearch)
 
-    let content = fs.readFileSync("src/content/pages/"+params.page+".yml","utf-8");
-    const allFiles = getAllFiles('src/content/pages');
-    const pages = allFiles.map(makeSearch)
-    return {
-        content:content,
-        pages:pages
+        return {
+            content:content,
+            pages:pages
+        }
     }
+    catch{
+        return {content:"title:"+params.page}
+    }
+    
 }
 
 
