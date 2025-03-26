@@ -26,21 +26,12 @@ function makeSearch(filepath){
 
 
 
+export function load(){
 
-export function load({params}){
-
-    let content = fs.readFileSync("src/content/pages/"+params.page+".yml","utf-8");
     const allFiles = getAllFiles('src/content/pages');
     const pages = allFiles.map(makeSearch)
+
     return {
-        content:content,
         pages:pages
     }
-}
-
-
-export function entries() {
-    const directoryPath = 'src/content/pages'; 
-    let allFiles = getAllFiles(directoryPath);
-	return allFiles.map(function (file) {return {page:file.replace("src/content/pages/","").replace(".yml","")}});
 }

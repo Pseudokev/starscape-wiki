@@ -1,7 +1,12 @@
 name: Korrelite
-sell-value: 7.0
 volume: 0.01
 tier: common
+in-game-description: A common mineral used in the construction of spaceship hulls.
+
+value:
+  sell:
+    - price: 3
+      at: marketplace
 
 recipes:
   - in: 
@@ -36,13 +41,5 @@ recipes:
       quantity: 1
     time: 2 #seconds
     recipe-type: refinery
-  - in: 
-    - item: metal-scraps
-      quantity: 1
-    out:
-    - item: korrelite
-      quantity: 1
-      chance: 0.16
-    time: 2 #seconds
-    recipe-type: scrapper
+  
 

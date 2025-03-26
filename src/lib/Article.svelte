@@ -1,10 +1,19 @@
 
 <script>
+    import { assets } from "$app/paths";
     import Divider from "./Divider.svelte";
     import YAML from "yaml"
 
     let props=$props();
+    
+
     let content = $derived.by(()=>{
+        if (props.assets!=null){
+            for (let i=0; i<props.assets.length; i++) {
+                return YAML.parse(props.content.replaceAll(new RegExp("src\\s*=\\s*\\\""+props.assets[i].name.replace(".","\\.")+"\\\"","g"), "src=\""+props.assets[i].url+"\""));
+                
+            }
+        }
         return YAML.parse(props.content);
     });
     

@@ -11,7 +11,7 @@
 	
 	
 	
-<Page>{@render children()}</Page>
+{@render children()}
 
 
 

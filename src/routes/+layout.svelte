@@ -2,10 +2,11 @@
 
 <script>
     import Ribbon from "$lib/Ribbon.svelte";
-    let {children } = $props();
+
+    let props = $props();
 </script>
 <Ribbon/>
-{@render children()}
+{@render props.children()}
 <style>
   :root {
   font-family:Verdana, Geneva, Tahoma, sans-serif;

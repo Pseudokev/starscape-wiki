@@ -5,17 +5,39 @@
     import Article from "./Article.svelte";
 
     let props = $props();
-    
+
+    let searchfocused = $state(false);
+    let searchvalue = $state("")
+    function onfocus(){
+        console.log("focused")
+        searchfocused = true;
+    }
+    function onunfocus(){
+        setTimeout(function(){searchfocused = false;},100)
+        
+    }
+    console.log(props.pages)
 </script>
 
 
-    <div class="main">
-        <input type="search" class="search" name = "search" placeholder = "Search">
+<div class="main">
+    <input type="search" class="search" name = "search" placeholder = "Search" onfocusincapture={onfocus} onfocusoutcapture={onunfocus} bind:value={searchvalue}>
+    {@render props.children()}
+    
+    {#if (searchfocused==true)}
+        <div class="dropdown">
+        {#each props.pages as page}
+            {#if (page.title.toLowerCase().includes(searchvalue.toLowerCase()))}
+                <p><a href={"/"+page.page} style="width:100%">{page.title}</a></p>
+            {/if}
+        {/each}
+        </div>
+    {/if}
 
-		{@render props.children()}
-	  
-	</div>
-	
+    
+    
+</div>
+
     
 
 
@@ -40,6 +62,19 @@
         right: 0px;
         top:-35px;
         height: 25px;
+        width:200px;
+        
+    }
+    .dropdown{
+        position: absolute;
+        right: 0px;
+        top:-10px;
+        height: auto;
+        width: 200px;
+        background-color: #2c2c2c;
+        border-color: rgb(100, 100, 100);
+        border-style: solid;
+        border-width: 1px;
         
     }
     .page{

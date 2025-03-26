@@ -1,0 +1,30 @@
+
+#when using article preview, images are simply the names of the image files with the extension, path is not required. However existing assets may be used using the assets path, "/assets/...".
+
+title: Article Title                  #title of the article.
+thumbnail: /assets/placeholder.png    #currently unused, but may be used later for embed previews and more expressive search.
+summary: lorem ipsum                  #a quick 1 or two sentence description of what the article is about. currently unused but may be used for same things as thumbnail.
+overview:                             #overview may be omitted if it doesn't fit with the article type. Overview is the window on the right that lists a bunch of stats.
+  image: /assets/placeholder.png 
+  title: overview title               #generally the same as article title
+  sections:
+    - name: Section 1
+      info:
+        Info1: info
+        Info2: info
+        info3: info
+    - name: Section 2
+      info:
+        Info1: info
+        Info2: info
+        info3: info
+
+contents:                             #actual article contents. an array of sections.
+  - 
+    header: header1                   # header may be omitted, in which case the section will have no header nor an entry in the table of contents
+    content: >                        #place all text in <p> tags. images can be embedded as <img src="imagefilename.png" alt="image alt text">
+      <p>lorem ipsum <img src="placeholder.png"></p> 
+  - 
+    header: header2
+    content: >                        
+      <p>lorem ipsum</p>
