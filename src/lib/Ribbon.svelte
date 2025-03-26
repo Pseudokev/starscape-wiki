@@ -1,4 +1,7 @@
 
+<script>
+    import logo from "../../static/assets/Logo.png"
+</script>
 
 <div class="ribbon">
     <img src='/assets/Logo.png' class ="logo" alt = "logo"/>

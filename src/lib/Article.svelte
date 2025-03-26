@@ -1,6 +1,5 @@
 
 <script>
-    import { assets } from "$app/paths";
     import Divider from "./Divider.svelte";
     import YAML from "yaml"
 
