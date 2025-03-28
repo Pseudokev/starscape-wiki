@@ -50,7 +50,7 @@
 	  border-color: rgb(100, 100, 100);
 	  border-width: 1px;
 	  border-style: solid;
-      width: 64%;
+      width: 66%;
 	  min-height: 100%;
 	  height: auto;
 	  position: absolute;
@@ -58,6 +58,9 @@
 	  top:15%;
 	  padding-right: 2%;
       padding-left: 2%;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.59);
+
+      
 	}
     .search{
         position: absolute;
