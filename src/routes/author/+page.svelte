@@ -1,6 +1,10 @@
 <script>
     import Page from "$lib/Page.svelte";
     import {getAllPages} from "$lib/repository"
+    import { onMount } from "svelte";
+
+    let editorEnabled = $state(false);
+    let articledirectory = $state(null);
 
     function bold(){
         document.execCommand("bold",false,null);
@@ -18,34 +22,40 @@
         getAllPages()
     }
 
+    onMount(function(){
+        getAllPages()
+    })
+
 </script>
 
 
 
-<button onclick={g}></button>
-<Page>
-    <input type="text" class="textinput" style="font-size:xx-large; margin-top:50px", placeholder="Title">
-    <hr>
-    
-    <div style="background-color:rgba(0,0,0,0.5); height:200px; width:200px; float:right" contenteditable="false"></div>
-    
+{#if (editorEnabled)}
+    <Page>
+        <input type="text" class="textinput" style="font-size:xx-large; margin-top:50px", placeholder="Title">
+        <hr>
+        
+        <div style="background-color:rgba(0,0,0,0.5); height:200px; width:200px; float:right" contenteditable="false"></div>
+        
 
 
-    <div contenteditable="true" style="height:100px; width:100%" >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore laudantium dicta ducimus dolorem consequuntur quisquam quibusdam blanditiis iste nihil nulla, modi a est qui molestias numquam ex. Inventore, saepe distinctio.
+        <div contenteditable="true" style="height:100px; width:100%" >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore laudantium dicta ducimus dolorem consequuntur quisquam quibusdam blanditiis iste nihil nulla, modi a est qui molestias numquam ex. Inventore, saepe distinctio.
+        </div>
+        <div contenteditable="true" style="height:100px; width:100%" >
+            <div style="background-color:rgba(0,0,0,0.5); height:200px; width:200px; float:right; margin:10px" contenteditable="false"></div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, aspernatur! Recusandae unde explicabo quas architecto, veritatis maxime rem a excepturi magni deleniti ullam reiciendis distinctio placeat quo. Doloribus, quis expedita.
+        </div>
+    </Page>
+    <div class = "editorcontrols">
+        <button type="button" class = "editorbutton" onclick={bold} ><b>B</b></button>
+        <button type="button" class = "editorbutton" onclick={italic}><i>I</i></button>
+        <button type="button" class = "editorbutton" onclick={underline}><u>U</u></button>
+        <button type="button" class = "editorbutton" onclick={strikethrough}><s>A</s></button>
     </div>
-    <div contenteditable="true" style="height:100px; width:100%" >
-        <div style="background-color:rgba(0,0,0,0.5); height:200px; width:200px; float:right; margin:10px" contenteditable="false"></div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, aspernatur! Recusandae unde explicabo quas architecto, veritatis maxime rem a excepturi magni deleniti ullam reiciendis distinctio placeat quo. Doloribus, quis expedita.
-    </div>
-</Page>
-<div class = "editorcontrols">
-    <button type="button" class = "editorbutton" onclick={bold} ><b>B</b></button>
-    <button type="button" class = "editorbutton" onclick={italic}><i>I</i></button>
-    <button type="button" class = "editorbutton" onclick={underline}><u>U</u></button>
-    <button type="button" class = "editorbutton" onclick={strikethrough}><s>A</s></button>
-</div>
+{:else}
 
+{/if}
 
 <style>
     .editorcontrols{
