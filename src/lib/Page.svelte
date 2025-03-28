@@ -20,7 +20,10 @@
 
 
 <div class="main">
-    <input type="search" class="search" name = "search" placeholder = "Search" onfocusincapture={onfocus} onfocusoutcapture={onunfocus} bind:value={searchvalue}>
+    {#if props.pages}
+        <input type="search" class="search" name = "search" placeholder = "Search" onfocusincapture={onfocus} onfocusoutcapture={onunfocus} bind:value={searchvalue}>
+
+    {/if}
     {@render props.children()}
     
     {#if (searchfocused==true)}
